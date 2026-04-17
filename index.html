@@ -12,30 +12,24 @@
 :root{--bg:#F8FAFC;--sf:#FFF;--sf2:#F1F5F9;--bd:#E2E8F0;--tx:#0F172A;--tx2:#475569;--tx3:#94A3B8;--bl:#3B82F6;--bld:#2563EB;--bls:#EFF6FF;--blb:#BFDBFE;--r:8px;--rs:6px;--f:'DM Sans',sans-serif;--m:'JetBrains Mono',monospace}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--f);background:var(--bg);color:var(--tx);line-height:1.5;-webkit-font-smoothing:antialiased}
-
 .header{padding:18px 24px;border-bottom:1px solid var(--bd);background:var(--sf)}
 .header-inner{max-width:820px;margin:0 auto;display:flex;align-items:center;gap:10px}
 .header-icon{width:34px;height:34px;background:var(--bls);border:1px solid var(--blb);border-radius:var(--r);display:flex;align-items:center;justify-content:center;color:var(--bl);flex-shrink:0}
 .header h1{font-size:16px;font-weight:600;letter-spacing:-.2px}
 .header p{font-size:11.5px;color:var(--tx2);margin-top:1px}
-
 .main{max-width:820px;margin:0 auto;padding:22px 24px 60px}
 .section-label{font-size:10.5px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3);margin-bottom:9px;display:flex;align-items:center;gap:5px}
 .section-label svg{width:15px;height:15px}
-
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
 .group{display:flex;flex-direction:column;gap:3px}
 .group.full{grid-column:1/-1}
 .label{font-size:12px;font-weight:500;color:var(--tx2);display:flex;align-items:center;gap:4px}
 .label svg{color:var(--tx3);flex-shrink:0;width:15px;height:15px}
-
 input,select,textarea{font-family:var(--f);font-size:13px;padding:7px 10px;border:1px solid var(--bd);border-radius:var(--rs);background:var(--sf);color:var(--tx);transition:border-color .15s,box-shadow .15s;outline:none;width:100%}
 input:focus,select:focus,textarea:focus{border-color:var(--bl);box-shadow:0 0 0 3px rgba(59,130,246,.1)}
 select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center;padding-right:28px}
 textarea{resize:vertical;min-height:56px;line-height:1.5}
-
 .divider{height:1px;background:var(--bd);margin:22px 0}
-
 .pills{display:flex;gap:7px;margin-bottom:14px}
 .pill{flex:1;padding:9px;border:1.5px solid var(--bd);border-radius:var(--r);background:var(--sf);cursor:pointer;transition:all .15s;text-align:center;font-family:var(--f)}
 .pill:hover{border-color:var(--blb);background:var(--bls)}
@@ -43,31 +37,32 @@ textarea{resize:vertical;min-height:56px;line-height:1.5}
 .pill-t{font-size:12.5px;font-weight:600;letter-spacing:.3px}
 .pill-s{font-size:10.5px;opacity:.6;margin-top:1px}
 .pill.active .pill-s{opacity:.85}
-
 .funnel-card{background:var(--bls);border:1px solid var(--blb);border-radius:var(--r);padding:12px 14px;margin-bottom:16px}
 .funnel-card h4{font-size:12px;font-weight:600;color:var(--bld);margin-bottom:6px;display:flex;align-items:center;gap:4px}
 .funnel-card h4 svg{width:13px;height:13px}
 .funnel-row{display:grid;grid-template-columns:110px 1fr;gap:3px 10px;font-size:11.5px;line-height:1.55}
 .funnel-row dt{color:var(--tx3);font-weight:500}
 .funnel-row dd{color:var(--tx2)}
-
 .outline-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .outline-list{margin-bottom:6px}
-.outline-item{display:flex;align-items:flex-start;gap:7px;padding:6px 9px;background:var(--sf);border:1px solid var(--bd);border-radius:var(--rs);margin-bottom:4px;transition:border-color .15s}
+.outline-item{display:flex;align-items:center;gap:7px;padding:6px 9px;background:var(--sf);border:1px solid var(--bd);border-radius:var(--rs);margin-bottom:4px;transition:border-color .15s,background .1s;cursor:grab;user-select:none}
 .outline-item:hover{border-color:var(--blb)}
 .outline-item.h3{margin-left:22px;background:var(--sf2);border-style:dashed}
-.outline-tag{font-family:var(--m);font-size:10px;font-weight:500;padding:1px 5px;border-radius:3px;background:var(--bls);color:var(--bld);flex-shrink:0;margin-top:1px}
+.outline-item.h4{margin-left:44px;background:var(--sf2);border-style:dotted}
+.outline-item.dragging{opacity:.4;background:var(--bls);border-color:var(--bl)}
+.outline-item.drag-over{border-top:2px solid var(--bl)}
+.outline-tag{font-family:var(--m);font-size:10px;font-weight:500;padding:1px 5px;border-radius:3px;background:var(--bls);color:var(--bld);flex-shrink:0}
+.outline-grip{color:var(--tx3);flex-shrink:0;display:flex;align-items:center;cursor:grab}
+.outline-grip svg{width:14px;height:14px}
 .outline-body{flex:1;min-width:0}
 .outline-text{font-size:12.5px;font-weight:500}
 .outline-notes{font-size:11px;color:var(--tx3);margin-top:1px}
 .outline-rm{flex-shrink:0;background:none;border:none;color:var(--tx3);cursor:pointer;padding:2px;border-radius:3px;transition:all .15s;display:flex;align-items:center}
 .outline-rm:hover{color:#DC2626;background:#FEF2F2}
 .outline-rm svg{width:12px;height:12px}
-
 .add-row{display:flex;gap:5px;margin-top:5px}
 .add-row input{flex:1}
 .add-row select{width:66px;flex:none}
-
 .btn{font-family:var(--f);font-size:12px;font-weight:500;padding:7px 12px;border:1px solid var(--bd);border-radius:var(--rs);background:var(--sf);color:var(--tx);cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
 .btn:hover{border-color:var(--blb);background:var(--bls)}
 .btn svg{width:14px;height:14px}
@@ -77,24 +72,20 @@ textarea{resize:vertical;min-height:56px;line-height:1.5}
 .btn-green:hover{background:#15803D;border-color:#15803D}
 .btn-sm{font-size:11px;padding:4px 8px}
 .btn-sm svg{width:12px;height:12px}
-
 .actions{display:flex;gap:7px;margin-top:22px;flex-wrap:wrap}
-
 .output-area{margin-top:22px}
 .output-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:5px}
 .output-box{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:14px 18px;font-family:var(--m);font-size:11.5px;line-height:1.7;white-space:pre-wrap;word-break:break-word;color:var(--tx);max-height:420px;overflow-y:auto}
-
 .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--tx);color:#fff;padding:7px 16px;border-radius:var(--r);font-size:12px;font-weight:500;pointer-events:none;opacity:0;transition:all .3s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 4px 12px rgba(0,0,0,.12)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
 .hidden{display:none}
-
 @media(max-width:640px){
   .grid{grid-template-columns:1fr}
   .header,.main{padding-left:12px;padding-right:12px}
   .pills{flex-direction:column}
   .actions{flex-direction:column}
   .outline-item.h3{margin-left:12px}
+  .outline-item.h4{margin-left:24px}
 }
 </style>
 </head>
@@ -113,618 +104,271 @@ textarea{resize:vertical;min-height:56px;line-height:1.5}
 </div>
 
 <div class="main">
-  <!-- BRAND & TOPIC -->
-  <div class="section-label">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-    Brand & Topic
+  <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Brand & Topic</div>
+  <div class="grid">
+    <div class="group"><label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Brand</label><select id="brand" onchange="onBrandChange()"><option value="">Select brand...</option><option>Golden English</option><option>Kampung Inggris Plus</option><option>Golden Online Class</option></select></div>
+    <div class="group"><label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><circle cx="5" cy="19" r="2"/><path d="M14.5 10L17.5 6.5M9.5 10L6.5 6.5M14.5 14L17.5 17.5M9.5 14L6.5 17.5"/></svg> Topic Cluster</label><select id="cluster"><option value="">Select cluster...</option></select></div>
   </div>
   <div class="grid">
-    <div class="group">
-      <label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Brand</label>
-      <select id="brand" onchange="onBrandChange()">
-        <option value="">Select brand...</option>
-        <option>Golden English</option>
-        <option>Kampung Inggris Plus</option>
-        <option>Golden Online Class</option>
-      </select>
-    </div>
-    <div class="group">
-      <label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><circle cx="5" cy="19" r="2"/><path d="M14.5 10L17.5 6.5M9.5 10L6.5 6.5M14.5 14L17.5 17.5M9.5 14L6.5 17.5"/></svg> Topic Cluster</label>
-      <select id="cluster"><option value="">Select cluster...</option></select>
-    </div>
+    <div class="group"><label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> Primary Keyword</label><input id="keyword" placeholder="e.g. cara mengajar bahasa inggris anak"></div>
+    <div class="group"><label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> Secondary Keywords</label><input id="secondaryKeywords" placeholder="Comma separated"></div>
   </div>
-  <div class="grid">
-    <div class="group">
-      <label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> Primary Keyword</label>
-      <input id="keyword" placeholder="e.g. cara mengajar bahasa inggris anak">
-    </div>
-    <div class="group">
-      <label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> Secondary Keywords</label>
-      <input id="secondaryKeywords" placeholder="Comma separated">
-    </div>
-  </div>
-
   <div class="divider"></div>
-
-  <!-- FUNNEL -->
-  <div class="section-label">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
-    Funnel Stage & Content Type
-  </div>
+  <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg> Funnel Stage & Content Type</div>
   <div class="pills" id="pills"></div>
   <div class="funnel-card" id="funnelCard"></div>
   <div class="grid">
-    <div class="group">
-      <label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Content Type</label>
-      <select id="contentType">
-        <option>How-to Guide</option><option>Listicle</option><option selected>Informational</option>
-        <option>Comparison</option><option>Review</option><option>Case Study</option><option>Pillar Page</option>
-      </select>
-    </div>
-    <div class="group">
-      <label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Target Persona</label>
-      <select id="persona"><option value="">Select persona...</option></select>
-    </div>
+    <div class="group"><label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Content Type</label><select id="contentType"><option>How-to Guide</option><option>Listicle</option><option selected>Informational</option><option>Comparison</option><option>Review</option><option>Case Study</option><option>Pillar Page</option></select></div>
+    <div class="group"><label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Target Persona</label><select id="persona"><option value="">Select persona...</option></select></div>
   </div>
-
   <div class="divider"></div>
-
-  <!-- CTA & LINKS -->
-  <div class="section-label">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-    CTA & Internal Links
-  </div>
+  <div class="section-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg> CTA & Internal Links</div>
   <div class="grid">
-    <div class="group">
-      <label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg> CTA / Conversion Goal</label>
-      <select id="cta" onchange="onCtaChange()">
-        <option value="">Select CTA...</option>
-        <option>WhatsApp Consultation</option><option>Free Trial Class</option><option>Program Registration</option>
-        <option>Download Lead Magnet</option><option>Book Free Assessment</option><option>Schedule Campus Visit</option>
-        <option>Get Discount / Promo</option><option>Subscribe Newsletter</option><option>Share to Social Media</option>
-        <option>Other (custom)</option>
-      </select>
-    </div>
-    <div class="group hidden" id="customCtaGroup">
-      <label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Custom CTA</label>
-      <input id="customCta" placeholder="Tulis CTA custom...">
-    </div>
-    <div class="group">
-      <label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Internal Link Slug</label>
-      <input id="internalLink" placeholder="e.g. kosakata-bahasa-inggris-sehari-hari">
-    </div>
-    <div class="group">
-      <label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Anchor Text</label>
-      <input id="anchorText" placeholder="e.g. kosakata bahasa inggris sehari-hari">
-    </div>
+    <div class="group"><label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg> CTA / Conversion Goal</label><select id="cta" onchange="onCtaChange()"><option value="">Select CTA...</option><option>WhatsApp Consultation</option><option>Free Trial Class</option><option>Program Registration</option><option>Download Lead Magnet</option><option>Book Free Assessment</option><option>Schedule Campus Visit</option><option>Get Discount / Promo</option><option>Subscribe Newsletter</option><option>Share to Social Media</option><option>Other (custom)</option></select></div>
+    <div class="group hidden" id="customCtaGroup"><label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Custom CTA</label><input id="customCta" placeholder="Tulis CTA custom..."></div>
+    <div class="group"><label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Internal Link Slug</label><input id="internalLink" placeholder="e.g. kosakata-bahasa-inggris-sehari-hari"></div>
+    <div class="group"><label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Anchor Text</label><input id="anchorText" placeholder="e.g. kosakata bahasa inggris sehari-hari"></div>
   </div>
-  <div class="grid" style="margin-top:0">
-    <div class="group full">
-      <label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Additional Notes</label>
-      <textarea id="notes" placeholder="Instruksi khusus untuk writer..."></textarea>
-    </div>
-  </div>
-
+  <div class="grid" style="margin-top:0"><div class="group full"><label class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Additional Notes</label><textarea id="notes" placeholder="Instruksi khusus untuk writer..."></textarea></div></div>
   <div class="divider"></div>
 
-  <!-- OUTLINE -->
+  <!-- OUTLINE with drag-drop -->
   <div class="outline-header">
-    <div class="section-label" style="margin-bottom:0">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 6h16M4 18h12"/></svg>
-      Content Outline
-    </div>
-    <button class="btn btn-sm" onclick="autoGenOutline()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-      Auto-generate
-    </button>
+    <div class="section-label" style="margin-bottom:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 6h16M4 18h12"/></svg> Content Outline</div>
+    <button class="btn btn-sm" onclick="autoGenOutline()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Auto-generate</button>
   </div>
   <div id="outlineList" class="outline-list"></div>
   <div class="add-row">
-    <select id="newTag"><option value="H2">H2</option><option value="H3">H3</option></select>
+    <select id="newTag"><option value="H1">H1</option><option value="H2" selected>H2</option><option value="H3">H3</option><option value="H4">H4</option></select>
     <input id="newHeading" placeholder="Add heading..." onkeydown="if(event.key==='Enter')addOutlineItem()">
-    <button class="btn btn-sm" onclick="addOutlineItem()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-      Add
-    </button>
+    <button class="btn btn-sm" onclick="addOutlineItem()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Add</button>
   </div>
 
-  <!-- ACTIONS -->
   <div class="actions">
-    <button class="btn btn-primary" onclick="generateBrief()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-      Generate Brief
-    </button>
-    <button class="btn btn-green" onclick="downloadDocx()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 13h6M9 17h4"/></svg>
-      Create Google Doc
-    </button>
-    <button class="btn" onclick="resetAll()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
-      Reset
-    </button>
+    <button class="btn btn-primary" onclick="generateBrief()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Generate Brief</button>
+    <button class="btn btn-green" onclick="downloadDocx()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 13h6M9 17h4"/></svg> Create Google Doc</button>
+    <button class="btn" onclick="resetAll()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg> Reset</button>
   </div>
 
-  <!-- OUTPUT -->
   <div id="outputArea" class="output-area hidden">
     <div class="output-header">
-      <div class="section-label" style="margin-bottom:0">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        Generated Brief
-      </div>
+      <div class="section-label" style="margin-bottom:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Generated Brief</div>
       <div style="display:flex;gap:5px">
-        <button class="btn btn-sm" onclick="copyBrief()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          Copy
-        </button>
-        <button class="btn btn-sm btn-green" onclick="downloadDocx()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 13h6M9 17h4"/></svg>
-          GDoc
-        </button>
+        <button class="btn btn-sm" onclick="copyBrief()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button>
+        <button class="btn btn-sm btn-green" onclick="downloadDocx()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 13h6M9 17h4"/></svg> GDoc</button>
       </div>
     </div>
     <div id="outputBox" class="output-box"></div>
   </div>
 </div>
-
 <div id="toast" class="toast"></div>
 
 <script>
-// ── DATA ──
-const BRANDS = {
-  "Golden English": { domain:"golden-course.com", clusters:["Parenting & Education Tips","Activity & Fun Learning","Vocabulary","Grammar","Games & Interactive Learning"], personas:["Orang Tua","Pelajar","Pelajar SMA","Umum"] },
-  "Kampung Inggris Plus": { domain:"kampunginggrisplus.com", clusters:["Grammar","IELTS","TOEFL","Speaking","Listening","Reading","Writing","Seputar KIP"], personas:["Mahasiswa","Karyawan","Pelajar SMA","Gap Year","Umum"] },
-  "Golden Online Class": { domain:"goldenonlineclass.com", clusters:["Grammar & Vocabulary","LPDP & Beasiswa","Reading & Writing","School English","Seputar GOC","Speaking & Expressions","Tips & Info","TOEFL & IELTS"], personas:["Pelajar SMA","Mahasiswa","Karyawan","LPDP Applicant","Umum"] },
-};
+const BRANDS={"Golden English":{domain:"golden-course.com",clusters:["Parenting & Education Tips","Activity & Fun Learning","Vocabulary","Grammar","Games & Interactive Learning"],personas:["Orang Tua","Pelajar","Pelajar SMA","Umum"]},"Kampung Inggris Plus":{domain:"kampunginggrisplus.com",clusters:["Grammar","IELTS","TOEFL","Speaking","Listening","Reading","Writing","Seputar KIP"],personas:["Mahasiswa","Karyawan","Pelajar SMA","Gap Year","Umum"]},"Golden Online Class":{domain:"goldenonlineclass.com",clusters:["Grammar & Vocabulary","LPDP & Beasiswa","Reading & Writing","School English","Seputar GOC","Speaking & Expressions","Tips & Info","TOEFL & IELTS"],personas:["Pelajar SMA","Mahasiswa","Karyawan","LPDP Applicant","Umum"]}};
+const FM={TOFU:{label:"Top of Funnel",stage:"Awareness",desc:"Audience baru menyadari masalah/kebutuhan. Belum kenal brand. Konten bertujuan menarik perhatian & edukasi awal.",searchIntent:"Informational",keywordType:"Informational — broad, high-volume, long-tail",contentFormats:"Blog Post, How-to Guide, Listicle, Infographic, Short Video",wordRange:"1.200 – 2.000",ctaStyle:"Soft — subscribe, download freebie, share",kpi:"Traffic, Impressions, New Users, Social Shares, Bounce Rate",linkStrategy:"Link ke MOFU content untuk dorong reader lebih dalam ke funnel",tone:"Educational, friendly, approachable — hindari hard-sell"},MOFU:{label:"Middle of Funnel",stage:"Consideration",desc:"Audience sudah aware masalah & aktif membandingkan solusi. Konten bertujuan nurture, educate deeper, & build trust.",searchIntent:"Commercial Investigation",keywordType:"Commercial — 'best', 'vs', 'rekomendasi', 'review'",contentFormats:"Comparison Guide, Case Study, In-depth Guide, Product Demo",wordRange:"1.500 – 2.500",ctaStyle:"Medium — free trial, consultation, download guide",kpi:"CTR, Lead Capture Rate, Time on Page, Return Visits",linkStrategy:"Link ke BOFU content (LP/program) & TOFU untuk topical authority",tone:"Persuasive tapi tidak pushy — tunjukkan value & social proof"},BOFU:{label:"Bottom of Funnel",stage:"Decision",desc:"Audience sudah tahu solusi & siap memilih provider. Konten bertujuan convert menjadi paying customer.",searchIntent:"Transactional",keywordType:"Transactional — branded, pricing, 'daftar', 'promo', location-based",contentFormats:"Landing Page, Testimonial, Pricing Page, Free Trial, Promo",wordRange:"800 – 1.500",ctaStyle:"Hard — daftar sekarang, hubungi kami, claim promo",kpi:"Conversion Rate, Cost per Lead, Revenue, ROI",linkStrategy:"Link ke testimonial, pricing, & program page. Minimal outbound.",tone:"Confident, urgent, proof-heavy — testimonial, angka, guarantee"}};
 
-const FM = {
-  TOFU:{label:"Top of Funnel",stage:"Awareness",desc:"Audience baru menyadari masalah/kebutuhan. Belum kenal brand. Konten bertujuan menarik perhatian & edukasi awal.",searchIntent:"Informational",keywordType:"Informational — broad, high-volume, long-tail",contentFormats:"Blog Post, How-to Guide, Listicle, Infographic, Short Video",wordRange:"1.200 – 2.000",ctaStyle:"Soft — subscribe, download freebie, share",kpi:"Traffic, Impressions, New Users, Social Shares, Bounce Rate",linkStrategy:"Link ke MOFU content untuk dorong reader lebih dalam ke funnel",tone:"Educational, friendly, approachable — hindari hard-sell"},
-  MOFU:{label:"Middle of Funnel",stage:"Consideration",desc:"Audience sudah aware masalah & aktif membandingkan solusi. Konten bertujuan nurture, educate deeper, & build trust.",searchIntent:"Commercial Investigation",keywordType:"Commercial — 'best', 'vs', 'rekomendasi', 'review'",contentFormats:"Comparison Guide, Case Study, In-depth Guide, Product Demo",wordRange:"1.500 – 2.500",ctaStyle:"Medium — free trial, consultation, download guide",kpi:"CTR, Lead Capture Rate, Time on Page, Return Visits",linkStrategy:"Link ke BOFU content (LP/program) & TOFU untuk topical authority",tone:"Persuasive tapi tidak pushy — tunjukkan value & social proof"},
-  BOFU:{label:"Bottom of Funnel",stage:"Decision",desc:"Audience sudah tahu solusi & siap memilih provider. Konten bertujuan convert menjadi paying customer.",searchIntent:"Transactional",keywordType:"Transactional — branded, pricing, 'daftar', 'promo', location-based",contentFormats:"Landing Page, Testimonial, Pricing Page, Free Trial, Promo",wordRange:"800 – 1.500",ctaStyle:"Hard — daftar sekarang, hubungi kami, claim promo",kpi:"Conversion Rate, Cost per Lead, Revenue, ROI",linkStrategy:"Link ke testimonial, pricing, & program page. Minimal outbound.",tone:"Confident, urgent, proof-heavy — testimonial, angka, guarantee"},
-};
+let currentFunnel="TOFU";
+let outline=[];
+let dragIdx=null;
 
-let currentFunnel = "TOFU";
-let outline = [];
+function showToast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2400)}
+function $(id){return document.getElementById(id)}
+function val(id){return $(id).value.trim()}
+function populateSelect(id,opts,ph){$(id).innerHTML=`<option value="">${ph}</option>`+opts.map(o=>`<option>${o}</option>`).join("")}
 
-// ── UI HELPERS ──
-function showToast(msg) {
-  const t = document.getElementById("toast");
-  t.textContent = msg; t.classList.add("show");
-  setTimeout(() => t.classList.remove("show"), 2400);
-}
+function onBrandChange(){const b=val("brand"),d=BRANDS[b];if(d){populateSelect("cluster",d.clusters,"Select cluster...");populateSelect("persona",d.personas,"Select persona...")}else{populateSelect("cluster",[],"Select cluster...");populateSelect("persona",[],"Select persona...")}}
+function onCtaChange(){$("customCtaGroup").classList.toggle("hidden",val("cta")!=="Other (custom)")}
 
-function $(id) { return document.getElementById(id); }
+function renderPills(){$("pills").innerHTML=["TOFU","MOFU","BOFU"].map(f=>`<button class="pill${currentFunnel===f?" active":""}" onclick="setFunnel('${f}')"><div class="pill-t">${f}</div><div class="pill-s">${FM[f].stage}</div></button>`).join("")}
+function setFunnel(f){currentFunnel=f;renderPills();renderFunnelCard()}
+function renderFunnelCard(){const m=FM[currentFunnel];$("funnelCard").innerHTML=`<h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> ${currentFunnel} — ${m.stage}</h4><dl class="funnel-row"><dt>Deskripsi</dt><dd>${m.desc}</dd><dt>Search Intent</dt><dd>${m.searchIntent}</dd><dt>Keyword Type</dt><dd>${m.keywordType}</dd><dt>Formats</dt><dd>${m.contentFormats}</dd><dt>Word Count</dt><dd>${m.wordRange}</dd><dt>CTA Style</dt><dd>${m.ctaStyle}</dd><dt>KPI</dt><dd>${m.kpi}</dd><dt>Link Strategy</dt><dd>${m.linkStrategy}</dd><dt>Tone</dt><dd>${m.tone}</dd></dl>`}
 
-function val(id) { return $(id).value.trim(); }
-
-function populateSelect(id, options, placeholder) {
-  const el = $(id);
-  el.innerHTML = `<option value="">${placeholder}</option>` + options.map(o => `<option>${o}</option>`).join("");
-}
-
-// ── EVENT HANDLERS ──
-function onBrandChange() {
-  const brand = val("brand");
-  const bd = BRANDS[brand];
-  if (bd) {
-    populateSelect("cluster", bd.clusters, "Select cluster...");
-    populateSelect("persona", bd.personas, "Select persona...");
-  } else {
-    populateSelect("cluster", [], "Select cluster...");
-    populateSelect("persona", [], "Select persona...");
-  }
-}
-
-function onCtaChange() {
-  $("customCtaGroup").classList.toggle("hidden", val("cta") !== "Other (custom)");
-}
-
-function renderPills() {
-  const container = $("pills");
-  container.innerHTML = ["TOFU","MOFU","BOFU"].map(f =>
-    `<button class="pill${currentFunnel===f?" active":""}" onclick="setFunnel('${f}')">
-      <div class="pill-t">${f}</div><div class="pill-s">${FM[f].stage}</div>
-    </button>`
-  ).join("");
-}
-
-function setFunnel(f) {
-  currentFunnel = f;
-  renderPills();
-  renderFunnelCard();
-}
-
-function renderFunnelCard() {
-  const m = FM[currentFunnel];
-  $("funnelCard").innerHTML = `
-    <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> ${currentFunnel} — ${m.stage}</h4>
-    <dl class="funnel-row">
-      <dt>Deskripsi</dt><dd>${m.desc}</dd>
-      <dt>Search Intent</dt><dd>${m.searchIntent}</dd>
-      <dt>Keyword Type</dt><dd>${m.keywordType}</dd>
-      <dt>Formats</dt><dd>${m.contentFormats}</dd>
-      <dt>Word Count</dt><dd>${m.wordRange}</dd>
-      <dt>CTA Style</dt><dd>${m.ctaStyle}</dd>
-      <dt>KPI</dt><dd>${m.kpi}</dd>
-      <dt>Link Strategy</dt><dd>${m.linkStrategy}</dd>
-      <dt>Tone</dt><dd>${m.tone}</dd>
-    </dl>`;
-}
-
-function renderOutline() {
-  $("outlineList").innerHTML = outline.map((item, i) =>
-    `<div class="outline-item${item.tag==="H3"?" h3":""}">
+// ── DRAG & DROP OUTLINE ──
+function renderOutline(){
+  const grip=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="1"/><circle cx="15" cy="6" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="18" r="1"/><circle cx="15" cy="18" r="1"/></svg>`;
+  const trash=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>`;
+  const indentClass=(tag)=>tag==="H3"?" h3":tag==="H4"?" h4":"";
+  $("outlineList").innerHTML=outline.map((item,i)=>
+    `<div class="outline-item${indentClass(item.tag)}" draggable="true" data-idx="${i}" ondragstart="onDragStart(event)" ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event)" ondragend="onDragEnd(event)">
+      <span class="outline-grip" title="Drag to reorder">${grip}</span>
       <span class="outline-tag">${item.tag}</span>
-      <div class="outline-body">
-        <div class="outline-text">${item.text}</div>
-        ${item.notes ? `<div class="outline-notes">${item.notes}</div>` : ""}
-      </div>
-      <button class="outline-rm" onclick="removeOutline(${i})">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-      </button>
+      <div class="outline-body"><div class="outline-text">${item.text}</div>${item.notes?`<div class="outline-notes">${item.notes}</div>`:""}</div>
+      <button class="outline-rm" onclick="removeOutline(${i})">${trash}</button>
     </div>`
   ).join("");
 }
 
-function removeOutline(i) { outline.splice(i, 1); renderOutline(); }
+function onDragStart(e){dragIdx=+e.currentTarget.dataset.idx;e.currentTarget.classList.add("dragging");e.dataTransfer.effectAllowed="move"}
+function onDragOver(e){e.preventDefault();e.dataTransfer.dropEffect="move";e.currentTarget.classList.add("drag-over")}
+function onDragLeave(e){e.currentTarget.classList.remove("drag-over")}
+function onDrop(e){e.preventDefault();e.currentTarget.classList.remove("drag-over");const toIdx=+e.currentTarget.dataset.idx;if(dragIdx!==null&&dragIdx!==toIdx){const item=outline.splice(dragIdx,1)[0];outline.splice(toIdx,0,item);renderOutline()}}
+function onDragEnd(e){dragIdx=null;document.querySelectorAll(".outline-item").forEach(el=>{el.classList.remove("dragging","drag-over")})}
 
-function addOutlineItem() {
-  const text = val("newHeading"); if (!text) return;
-  outline.push({ tag: val("newTag"), text, notes: "" });
-  $("newHeading").value = "";
-  renderOutline();
-}
+function removeOutline(i){outline.splice(i,1);renderOutline()}
+function addOutlineItem(){const t=val("newHeading");if(!t)return;outline.push({tag:val("newTag"),text:t,notes:""});$("newHeading").value="";renderOutline()}
 
-// ── OUTLINE GENERATOR ──
-function genOutline() {
-  const kw = val("keyword"), ct = val("contentType"), funnel = currentFunnel;
-  const o = [
-    { tag:"H1", text:`[Title — optimized: "${kw}"]`, notes:"" },
-    { tag:"H2", text:"Pendahuluan", notes:"Hook + pain point + preview. Primary keyword di paragraf pertama." },
-  ];
-  const tpl = {
-    "How-to Guide":[
-      {tag:"H2",text:`Apa Itu ${kw}?`,notes:"Definisi + konteks"},{tag:"H2",text:"Mengapa Ini Penting?",notes:"Benefit + data"},
-      {tag:"H2",text:"Persiapan Sebelum Memulai",notes:"Prasyarat / tools"},
-      {tag:"H2",text:"Langkah-langkah / Cara",notes:"Step-by-step"},
-      {tag:"H3",text:"Langkah 1: [Sub-topic]",notes:"Detail + contoh"},{tag:"H3",text:"Langkah 2: [Sub-topic]",notes:""},{tag:"H3",text:"Langkah 3: [Sub-topic]",notes:""},{tag:"H3",text:"Langkah 4: [Sub-topic]",notes:""},
-      {tag:"H2",text:"Tips & Kesalahan Umum",notes:"Pro tips + common mistakes"},
-    ],
-    "Listicle":[
-      {tag:"H2",text:`Daftar ${kw}`,notes:"Intro list + kriteria"},
-      {tag:"H3",text:"1. [Item pertama]",notes:"Penjelasan + contoh"},{tag:"H3",text:"2. [Item kedua]",notes:""},{tag:"H3",text:"3. [Item ketiga]",notes:""},{tag:"H3",text:"4. [Item keempat]",notes:""},{tag:"H3",text:"5. [Item kelima]",notes:""},
-      {tag:"H2",text:"Cara Memilih yang Tepat",notes:"Recommendation"},
-    ],
-    "Comparison":[
-      {tag:"H2",text:"Overview Singkat",notes:"Brief intro kedua opsi"},
-      {tag:"H2",text:"[Opsi A] — Kelebihan & Kekurangan",notes:""},{tag:"H2",text:"[Opsi B] — Kelebihan & Kekurangan",notes:""},
-      {tag:"H2",text:"Tabel Perbandingan",notes:"Side-by-side table"},
-      {tag:"H2",text:"Mana yang Lebih Cocok?",notes:"Conditional recommendation"},
-    ],
-    "Review":[
-      {tag:"H2",text:"Sekilas Tentang [Subject]",notes:"Overview"},
-      {tag:"H2",text:"Pengalaman Nyata",notes:"Testimony"},{tag:"H2",text:"Kelebihan",notes:""},{tag:"H2",text:"Kekurangan",notes:""},
-      {tag:"H2",text:"Untuk Siapa Ini Cocok?",notes:"Audience match"},{tag:"H2",text:"Verdict / Penilaian Akhir",notes:""},
-    ],
-  };
-  const def = [{tag:"H2",text:`Apa Itu ${kw}?`,notes:"Definisi + konteks"},{tag:"H2",text:"Penjelasan Detail",notes:"Deep dive"},{tag:"H3",text:"[Subtopik 1]",notes:""},{tag:"H3",text:"[Subtopik 2]",notes:""},{tag:"H3",text:"[Subtopik 3]",notes:""},{tag:"H2",text:"Contoh / Penerapan",notes:"Practical examples"}];
-  o.push(...(tpl[ct] || def));
-
-  if (funnel === "TOFU") {
-    o.push({tag:"H2",text:"Hal yang Perlu Diketahui Lebih Lanjut",notes:"Bridging → link ke MOFU content"});
-  } else if (funnel === "MOFU") {
-    o.push({tag:"H2",text:"Perbandingan Solusi / Opsi",notes:"Compare 2-3 opsi termasuk brand"},{tag:"H2",text:"Bukti & Testimoni",notes:"Social proof — case study, angka"},{tag:"H2",text:"Rekomendasi Program / Solusi",notes:"Soft-sell → program brand"});
-  } else {
-    o.push({tag:"H2",text:"Kenapa Memilih [Brand]?",notes:"USP, differentiator, guarantee"},{tag:"H2",text:"Testimoni & Hasil Nyata",notes:"Screenshot, angka, before-after"},{tag:"H2",text:"Promo / Penawaran Spesial",notes:"Scarcity + urgency"});
-  }
-  o.push({tag:"H2",text:"FAQ",notes:"3–5 pertanyaan (schema FAQPage)"},{tag:"H2",text:"Kesimpulan",notes:`Summary + CTA (${FM[funnel].ctaStyle})`});
+function genOutline(){
+  const kw=val("keyword"),ct=val("contentType"),fn=currentFunnel;
+  const o=[{tag:"H1",text:`[Title — optimized: "${kw}"]`,notes:""},{tag:"H2",text:"Pendahuluan",notes:"Hook + pain point + preview. Primary keyword di paragraf pertama."}];
+  const tpl={"How-to Guide":[{tag:"H2",text:`Apa Itu ${kw}?`,notes:"Definisi + konteks"},{tag:"H2",text:"Mengapa Ini Penting?",notes:"Benefit + data"},{tag:"H2",text:"Persiapan Sebelum Memulai",notes:"Prasyarat / tools"},{tag:"H2",text:"Langkah-langkah / Cara",notes:"Step-by-step"},{tag:"H3",text:"Langkah 1: [Sub-topic]",notes:"Detail + contoh"},{tag:"H3",text:"Langkah 2: [Sub-topic]",notes:""},{tag:"H3",text:"Langkah 3: [Sub-topic]",notes:""},{tag:"H3",text:"Langkah 4: [Sub-topic]",notes:""},{tag:"H2",text:"Tips & Kesalahan Umum",notes:"Pro tips + common mistakes"}],"Listicle":[{tag:"H2",text:`Daftar ${kw}`,notes:"Intro list + kriteria"},{tag:"H3",text:"1. [Item pertama]",notes:"Penjelasan + contoh"},{tag:"H3",text:"2. [Item kedua]",notes:""},{tag:"H3",text:"3. [Item ketiga]",notes:""},{tag:"H3",text:"4. [Item keempat]",notes:""},{tag:"H3",text:"5. [Item kelima]",notes:""},{tag:"H2",text:"Cara Memilih yang Tepat",notes:"Recommendation"}],"Comparison":[{tag:"H2",text:"Overview Singkat",notes:"Brief intro kedua opsi"},{tag:"H2",text:"[Opsi A] — Kelebihan & Kekurangan",notes:""},{tag:"H2",text:"[Opsi B] — Kelebihan & Kekurangan",notes:""},{tag:"H2",text:"Tabel Perbandingan",notes:"Side-by-side table"},{tag:"H2",text:"Mana yang Lebih Cocok?",notes:"Conditional recommendation"}],"Review":[{tag:"H2",text:"Sekilas Tentang [Subject]",notes:"Overview"},{tag:"H2",text:"Pengalaman Nyata",notes:"Testimony"},{tag:"H2",text:"Kelebihan",notes:""},{tag:"H2",text:"Kekurangan",notes:""},{tag:"H2",text:"Untuk Siapa Ini Cocok?",notes:"Audience match"},{tag:"H2",text:"Verdict / Penilaian Akhir",notes:""}]};
+  const def=[{tag:"H2",text:`Apa Itu ${kw}?`,notes:"Definisi + konteks"},{tag:"H2",text:"Penjelasan Detail",notes:"Deep dive"},{tag:"H3",text:"[Subtopik 1]",notes:""},{tag:"H3",text:"[Subtopik 2]",notes:""},{tag:"H3",text:"[Subtopik 3]",notes:""},{tag:"H2",text:"Contoh / Penerapan",notes:"Practical examples"}];
+  o.push(...(tpl[ct]||def));
+  if(fn==="TOFU")o.push({tag:"H2",text:"Hal yang Perlu Diketahui Lebih Lanjut",notes:"Bridging → link ke MOFU content"});
+  else if(fn==="MOFU")o.push({tag:"H2",text:"Perbandingan Solusi / Opsi",notes:"Compare 2-3 opsi"},{tag:"H2",text:"Bukti & Testimoni",notes:"Social proof"},{tag:"H2",text:"Rekomendasi Program / Solusi",notes:"Soft-sell → brand"});
+  else o.push({tag:"H2",text:"Kenapa Memilih [Brand]?",notes:"USP, differentiator"},{tag:"H2",text:"Testimoni & Hasil Nyata",notes:"Screenshot, angka"},{tag:"H2",text:"Promo / Penawaran Spesial",notes:"Scarcity + urgency"});
+  o.push({tag:"H2",text:"FAQ",notes:"3–5 pertanyaan (schema FAQPage)"},{tag:"H2",text:"Kesimpulan",notes:`Summary + CTA (${FM[fn].ctaStyle})`});
   return o;
 }
 
-function autoGenOutline() {
-  if (!val("keyword") || !val("brand")) { showToast("Isi Brand & Primary Keyword dulu"); return; }
-  outline = genOutline();
-  renderOutline();
-  showToast("Outline generated");
-}
+function autoGenOutline(){if(!val("keyword")||!val("brand")){showToast("Isi Brand & Primary Keyword dulu");return}outline=genOutline();renderOutline();showToast("Outline generated")}
 
-// ── BRIEF TEXT ──
-function makeBriefText() {
-  const brand = val("brand"), b = BRANDS[brand], m = FM[currentFunnel];
-  const cta = val("cta") + (val("cta")==="Other (custom)" && val("customCta") ? ` — ${val("customCta")}` : "");
-  let s = `SEO ARTICLE BRIEF\n${brand} — ${b.domain}\n${"═".repeat(44)}\n\n`;
-  s += `PRIMARY KEYWORD: ${val("keyword")}\nSECONDARY KEYWORDS: ${val("secondaryKeywords")||"—"}\nTOPIC CLUSTER: ${val("cluster")}\n`;
-  s += `FUNNEL: ${currentFunnel} (${m.label} — ${m.stage})\nSEARCH INTENT: ${m.searchIntent}\nCONTENT TYPE: ${val("contentType")}\n`;
-  s += `PERSONA: ${val("persona")}\nWORD COUNT: ${m.wordRange}\nCTA: ${cta}\nCTA STYLE: ${m.ctaStyle}\n`;
-  s += `INTERNAL LINK: ${val("internalLink")||"—"}\nANCHOR TEXT: ${val("anchorText")||"—"}\n`;
-  if (val("internalLink")) s += `LINK URL: https://${b.domain}/${val("internalLink")}/\n`;
-  s += `\n${"═".repeat(44)}\nFUNNEL GUIDELINES (${currentFunnel})\n\n${m.desc}\nKeyword Type: ${m.keywordType}\nFormats: ${m.contentFormats}\nCTA Style: ${m.ctaStyle}\nKPI: ${m.kpi}\nLink Strategy: ${m.linkStrategy}\nTone: ${m.tone}\n`;
-  s += `\n${"═".repeat(44)}\nCONTENT OUTLINE\n\n`;
-  outline.forEach(i => { const ind = i.tag==="H3"?"    ":""; s += `${ind}${i.tag} — ${i.text}\n`; if(i.notes) s += `${ind}  → ${i.notes}\n`; });
-  s += `\n${"═".repeat(44)}\nBRIEF NOTES\n\nSchema: ${val("contentType")==="Listicle"?"ItemList+FAQPage":val("contentType")==="How-to Guide"?"HowTo+FAQPage":"Article+FAQPage"}\nImage: Min 3 images with alt text keyword\nTone: Friendly, educational, Bahasa Indonesia\n`;
-  if (val("notes")) s += `\nNotes: ${val("notes")}\n`;
+function makeBriefText(){
+  const brand=val("brand"),b=BRANDS[brand],m=FM[currentFunnel];
+  const cta=val("cta")+(val("cta")==="Other (custom)"&&val("customCta")?` — ${val("customCta")}`:"");
+  let s=`SEO ARTICLE BRIEF\n${brand} — ${b.domain}\n${"═".repeat(44)}\n\n`;
+  s+=`PRIMARY KEYWORD: ${val("keyword")}\nSECONDARY KEYWORDS: ${val("secondaryKeywords")||"—"}\nTOPIC CLUSTER: ${val("cluster")}\n`;
+  s+=`FUNNEL: ${currentFunnel} (${m.label} — ${m.stage})\nSEARCH INTENT: ${m.searchIntent}\nCONTENT TYPE: ${val("contentType")}\n`;
+  s+=`PERSONA: ${val("persona")}\nWORD COUNT: ${m.wordRange}\nCTA: ${cta}\nCTA STYLE: ${m.ctaStyle}\n`;
+  s+=`INTERNAL LINK: ${val("internalLink")||"—"}\nANCHOR TEXT: ${val("anchorText")||"—"}\n`;
+  if(val("internalLink"))s+=`LINK URL: https://${b.domain}/${val("internalLink")}/\n`;
+  s+=`\n${"═".repeat(44)}\nCONTENT OUTLINE\n\n`;
+  outline.forEach(i=>{const ind=i.tag==="H3"?"    ":i.tag==="H4"?"        ":"";s+=`${ind}${i.tag} — ${i.text}\n`;if(i.notes)s+=`${ind}  → ${i.notes}\n`});
+  if(val("notes")){s+=`\n${"═".repeat(44)}\nBRIEF NOTES\n\n${val("notes")}\n`}
   return s;
 }
 
-function generateBrief() {
-  if (!val("keyword") || !val("brand")) { showToast("Isi Brand & Primary Keyword dulu"); return; }
-  if (!outline.length) { outline = genOutline(); renderOutline(); }
-  const text = makeBriefText();
-  $("outputBox").textContent = text;
+function generateBrief(){
+  if(!val("keyword")||!val("brand")){showToast("Isi Brand & Primary Keyword dulu");return}
+  if(!outline.length){outline=genOutline();renderOutline()}
+  $("outputBox").textContent=makeBriefText();
   $("outputArea").classList.remove("hidden");
   showToast("Brief generated");
-  setTimeout(() => $("outputArea").scrollIntoView({ behavior:"smooth", block:"start" }), 100);
+  setTimeout(()=>$("outputArea").scrollIntoView({behavior:"smooth",block:"start"}),100);
 }
 
-function copyBrief() {
-  const text = $("outputBox").textContent;
-  if (!text) { showToast("Generate brief dulu"); return; }
-  const ta = document.createElement("textarea");
-  ta.value = text;
-  ta.style.cssText = "position:fixed;left:-9999px;top:-9999px;opacity:0";
-  document.body.appendChild(ta);
-  ta.focus(); ta.select();
-  try { document.execCommand("copy"); showToast("Copied to clipboard"); }
-  catch(e) { showToast("Copy gagal — select manual"); }
+function copyBrief(){
+  const t=$("outputBox").textContent;if(!t){showToast("Generate brief dulu");return}
+  const ta=document.createElement("textarea");ta.value=t;ta.style.cssText="position:fixed;left:-9999px;top:-9999px;opacity:0";
+  document.body.appendChild(ta);ta.focus();ta.select();
+  try{document.execCommand("copy");showToast("Copied")}catch(e){showToast("Copy gagal")}
   document.body.removeChild(ta);
 }
 
-function resetAll() {
-  $("brand").value = ""; $("cluster").innerHTML = '<option value="">Select cluster...</option>';
-  $("keyword").value = ""; $("secondaryKeywords").value = "";
-  $("persona").innerHTML = '<option value="">Select persona...</option>';
-  $("cta").value = ""; $("customCta").value = ""; $("customCtaGroup").classList.add("hidden");
-  $("internalLink").value = ""; $("anchorText").value = ""; $("notes").value = "";
-  $("contentType").value = "Informational";
-  currentFunnel = "TOFU"; renderPills(); renderFunnelCard();
-  outline = []; renderOutline();
-  $("outputArea").classList.add("hidden");
-  showToast("Reset");
+function resetAll(){
+  $("brand").value="";$("cluster").innerHTML='<option value="">Select cluster...</option>';
+  $("keyword").value="";$("secondaryKeywords").value="";
+  $("persona").innerHTML='<option value="">Select persona...</option>';
+  $("cta").value="";$("customCta").value="";$("customCtaGroup").classList.add("hidden");
+  $("internalLink").value="";$("anchorText").value="";$("notes").value="";
+  $("contentType").value="Informational";
+  currentFunnel="TOFU";renderPills();renderFunnelCard();
+  outline=[];renderOutline();$("outputArea").classList.add("hidden");showToast("Reset");
 }
 
 // ── DOCX GENERATION ──
-async function downloadDocx() {
-  if (!val("keyword") || !val("brand")) { showToast("Isi Brand & Primary Keyword dulu"); return; }
-  if (!outline.length) { outline = genOutline(); renderOutline(); }
+async function downloadDocx(){
+  if(!val("keyword")||!val("brand")){showToast("Isi Brand & Primary Keyword dulu");return}
+  if(!outline.length){outline=genOutline();renderOutline()}
 
-  const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
-          HeadingLevel, AlignmentType, BorderStyle, WidthType, ShadingType,
-          ExternalHyperlink } = docx;
+  const{Document,Packer,Paragraph,TextRun,Table,TableRow,TableCell,HeadingLevel,AlignmentType,BorderStyle,WidthType,ShadingType,ExternalHyperlink}=docx;
+  const brand=val("brand"),b=BRANDS[brand],m=FM[currentFunnel];
+  const cta=val("cta")+(val("cta")==="Other (custom)"&&val("customCta")?` — ${val("customCta")}`:"");
+  const linkUrl=val("internalLink")?`https://${b.domain}/${val("internalLink")}/`:"";
+  const anchorTxt=val("anchorText")||val("internalLink")||"link terkait";
 
-  const brand = val("brand"), b = BRANDS[brand], m = FM[currentFunnel];
-  const cta = val("cta") + (val("cta")==="Other (custom)" && val("customCta") ? ` — ${val("customCta")}` : "");
-  const linkUrl = val("internalLink") ? `https://${b.domain}/${val("internalLink")}/` : "";
-  const anchorTxt = val("anchorText") || val("internalLink") || "link terkait";
+  const metaData=[["Primary Keyword",val("keyword")],["Secondary Keywords",val("secondaryKeywords")||"—"],["Topic Cluster",val("cluster")],["Funnel Stage",`${currentFunnel} (${m.label} — ${m.stage})`],["Search Intent",m.searchIntent],["Content Type",val("contentType")],["Target Persona",val("persona")],["Word Count",m.wordRange],["CTA",cta],["CTA Style",m.ctaStyle],["Internal Link",val("internalLink")||"—"],["Anchor Text",anchorTxt],["Link URL",linkUrl||"—"]];
+  const border={style:BorderStyle.SINGLE,size:1,color:"CBD5E1"};
+  const borders={top:border,bottom:border,left:border,right:border};
 
-  // Metadata rows
-  const metaData = [
-    ["Primary Keyword", val("keyword")],
-    ["Secondary Keywords", val("secondaryKeywords") || "—"],
-    ["Topic Cluster", val("cluster")],
-    ["Funnel Stage", `${currentFunnel} (${m.label} — ${m.stage})`],
-    ["Search Intent", m.searchIntent],
-    ["Content Type", val("contentType")],
-    ["Target Persona", val("persona")],
-    ["Word Count", m.wordRange],
-    ["CTA", cta],
-    ["CTA Style", m.ctaStyle],
-    ["Internal Link", val("internalLink") || "—"],
-    ["Anchor Text", anchorTxt],
-    ["Link URL", linkUrl || "—"],
-  ];
+  const metaRows=metaData.map(([label,value])=>new TableRow({children:[
+    new TableCell({borders,width:{size:2800,type:WidthType.DXA},shading:{fill:"F1F5F9",type:ShadingType.CLEAR},margins:{top:60,bottom:60,left:100,right:100},children:[new Paragraph({children:[new TextRun({text:label,bold:true,font:"DM Sans",size:20,color:"334155"})]})]}),
+    new TableCell({borders,width:{size:6560,type:WidthType.DXA},margins:{top:60,bottom:60,left:100,right:100},children:[new Paragraph({children:[new TextRun({text:value,font:"DM Sans",size:20,color:"475569"})]})]})
+  ]}));
 
-  const border = { style: BorderStyle.SINGLE, size: 1, color: "CBD5E1" };
-  const borders = { top: border, bottom: border, left: border, right: border };
-
-  const metaRows = metaData.map(([label, value], i) =>
-    new TableRow({
-      children: [
-        new TableCell({
-          borders, width: { size: 2800, type: WidthType.DXA },
-          shading: { fill: "DBEAFE", type: ShadingType.CLEAR },
-          margins: { top: 60, bottom: 60, left: 100, right: 100 },
-          children: [new Paragraph({ children: [new TextRun({ text: label, bold: true, font: "DM Sans", size: 20, color: "1E40AF" })] })],
-        }),
-        new TableCell({
-          borders, width: { size: 6560, type: WidthType.DXA },
-          margins: { top: 60, bottom: 60, left: 100, right: 100 },
-          children: [new Paragraph({ children: [new TextRun({ text: value, font: "DM Sans", size: 20, color: "334155" })] })],
-        }),
-      ],
-    })
-  );
-
-  // Funnel guidelines
-  const funnelRows = [
-    ["Deskripsi", m.desc], ["Search Intent", m.searchIntent], ["Keyword Type", m.keywordType],
-    ["Formats", m.contentFormats], ["Word Count", m.wordRange], ["CTA Style", m.ctaStyle],
-    ["KPI", m.kpi], ["Link Strategy", m.linkStrategy], ["Tone", m.tone],
-  ];
-
-  const funnelTableRows = funnelRows.map(([label, value]) =>
-    new TableRow({
-      children: [
-        new TableCell({
-          borders, width: { size: 2800, type: WidthType.DXA },
-          shading: { fill: "F1F5F9", type: ShadingType.CLEAR },
-          margins: { top: 50, bottom: 50, left: 100, right: 100 },
-          children: [new Paragraph({ children: [new TextRun({ text: label, bold: true, font: "DM Sans", size: 18, color: "64748B" })] })],
-        }),
-        new TableCell({
-          borders, width: { size: 6560, type: WidthType.DXA },
-          margins: { top: 50, bottom: 50, left: 100, right: 100 },
-          children: [new Paragraph({ children: [new TextRun({ text: value, font: "DM Sans", size: 18, color: "475569" })] })],
-        }),
-      ],
-    })
-  );
-
-  // Build document children
-  const children = [];
+  const children=[];
 
   // Title
-  children.push(new Paragraph({
-    heading: HeadingLevel.HEADING_1,
-    children: [new TextRun({ text: `SEO Article Brief — ${brand}`, bold: true, font: "DM Sans", size: 36, color: "2563EB" })],
-    spacing: { after: 100 },
-  }));
-  children.push(new Paragraph({
-    children: [new TextRun({ text: b.domain, font: "DM Sans", size: 22, color: "94A3B8", italics: true })],
-    spacing: { after: 300 },
-  }));
+  children.push(new Paragraph({heading:HeadingLevel.HEADING_1,children:[new TextRun({text:`SEO Article Brief — ${brand}`,bold:true,font:"DM Sans",size:36,color:"0F172A"})],spacing:{after:60}}));
+  children.push(new Paragraph({children:[new TextRun({text:b.domain,font:"DM Sans",size:20,color:"64748B",italics:true})],spacing:{after:250}}));
 
   // Metadata table
-  children.push(new Table({
-    width: { size: 9360, type: WidthType.DXA },
-    columnWidths: [2800, 6560],
-    rows: metaRows,
-  }));
-  children.push(new Paragraph({ spacing: { before: 300, after: 100 }, children: [] }));
+  children.push(new Table({width:{size:9360,type:WidthType.DXA},columnWidths:[2800,6560],rows:metaRows}));
+  children.push(new Paragraph({spacing:{before:300,after:100},children:[]}));
 
-  // Funnel guidelines section
-  children.push(new Paragraph({
-    heading: HeadingLevel.HEADING_2,
-    children: [new TextRun({ text: `Funnel Guidelines — ${currentFunnel} (${m.stage})`, bold: true, font: "DM Sans", size: 28, color: "1E40AF" })],
-    spacing: { before: 200, after: 150 },
-  }));
-  children.push(new Table({
-    width: { size: 9360, type: WidthType.DXA },
-    columnWidths: [2800, 6560],
-    rows: funnelTableRows,
-  }));
-  children.push(new Paragraph({ spacing: { before: 300, after: 100 }, children: [] }));
+  // Content Outline
+  children.push(new Paragraph({heading:HeadingLevel.HEADING_2,children:[new TextRun({text:"Content Outline",bold:true,font:"DM Sans",size:28,color:"0F172A"})],spacing:{before:200,after:150}}));
 
-  // Content Outline section
-  children.push(new Paragraph({
-    heading: HeadingLevel.HEADING_2,
-    children: [new TextRun({ text: "Content Outline", bold: true, font: "DM Sans", size: 28, color: "1E40AF" })],
-    spacing: { before: 200, after: 150 },
-  }));
+  outline.forEach(item=>{
+    const isH1=item.tag==="H1",isH3=item.tag==="H3",isH4=item.tag==="H4";
+    const heading=isH1?HeadingLevel.HEADING_1:isH3?HeadingLevel.HEADING_3:isH4?HeadingLevel.HEADING_4:HeadingLevel.HEADING_2;
+    const size=isH1?32:isH3?22:isH4?20:26;
+    const indent=isH3?{left:720}:isH4?{left:1440}:undefined;
 
-  outline.forEach(item => {
-    const isH1 = item.tag === "H1";
-    const isH3 = item.tag === "H3";
-    const heading = isH1 ? HeadingLevel.HEADING_1 : isH3 ? HeadingLevel.HEADING_3 : HeadingLevel.HEADING_2;
-    const size = isH1 ? 32 : isH3 ? 22 : 26;
-    const color = isH1 ? "2563EB" : isH3 ? "3B82F6" : "1E40AF";
+    children.push(new Paragraph({heading,indent,children:[new TextRun({text:item.text,bold:true,font:"DM Sans",size,color:"0F172A"})],spacing:{before:isH1?200:100,after:50}}));
+    if(item.notes)children.push(new Paragraph({indent,children:[new TextRun({text:`→ ${item.notes}`,font:"DM Sans",size:18,color:"94A3B8",italics:true})],spacing:{after:60}}));
 
-    children.push(new Paragraph({
-      heading,
-      indent: isH3 ? { left: 720 } : undefined,
-      children: [new TextRun({ text: item.text, bold: true, font: "DM Sans", size, color })],
-      spacing: { before: isH1 ? 200 : 120, after: 60 },
-    }));
-
-    if (item.notes) {
-      children.push(new Paragraph({
-        indent: isH3 ? { left: 720 } : undefined,
-        children: [new TextRun({ text: `→ ${item.notes}`, font: "DM Sans", size: 18, color: "94A3B8", italics: true })],
-        spacing: { after: 80 },
-      }));
-    }
-
-    // Add internal link placeholder under Pendahuluan and Kesimpulan
-    if ((item.text === "Pendahuluan" || item.text.startsWith("Kesimpulan")) && linkUrl) {
-      children.push(new Paragraph({
-        children: [
-          new TextRun({ text: "[Sisipkan internal link: ", font: "DM Sans", size: 18, color: "94A3B8" }),
-          new ExternalHyperlink({
-            children: [new TextRun({ text: anchorTxt, style: "Hyperlink", font: "DM Sans", size: 18 })],
-            link: linkUrl,
-          }),
-          new TextRun({ text: "]", font: "DM Sans", size: 18, color: "94A3B8" }),
-        ],
-        spacing: { after: 80 },
-      }));
+    // Internal link under Pendahuluan & Kesimpulan
+    if((item.text==="Pendahuluan"||item.text.startsWith("Kesimpulan"))&&linkUrl){
+      children.push(new Paragraph({children:[
+        new TextRun({text:"[Sisipkan internal link: ",font:"DM Sans",size:18,color:"94A3B8"}),
+        new ExternalHyperlink({children:[new TextRun({text:anchorTxt,style:"Hyperlink",font:"DM Sans",size:18})],link:linkUrl}),
+        new TextRun({text:"]",font:"DM Sans",size:18,color:"94A3B8"}),
+      ],spacing:{after:60}}));
     }
   });
 
   // CTA Section
-  children.push(new Paragraph({ spacing: { before: 300 }, children: [] }));
-  children.push(new Paragraph({
-    heading: HeadingLevel.HEADING_2,
-    children: [new TextRun({ text: "CTA Section", bold: true, font: "DM Sans", size: 28, color: "1E40AF" })],
-    spacing: { after: 100 },
-  }));
-  children.push(new Paragraph({
-    children: [
-      new TextRun({ text: `CTA: ${cta}`, bold: true, font: "DM Sans", size: 22, color: "2563EB" }),
-    ],
-    spacing: { after: 60 },
-  }));
-  children.push(new Paragraph({
-    children: [new TextRun({ text: `Style: ${m.ctaStyle}`, font: "DM Sans", size: 18, color: "475569" })],
-  }));
+  children.push(new Paragraph({spacing:{before:250},children:[]}));
+  children.push(new Paragraph({heading:HeadingLevel.HEADING_2,children:[new TextRun({text:"CTA Section",bold:true,font:"DM Sans",size:28,color:"0F172A"})],spacing:{after:80}}));
+  children.push(new Paragraph({children:[new TextRun({text:`CTA: ${cta}`,bold:true,font:"DM Sans",size:22,color:"334155"})],spacing:{after:40}}));
+  children.push(new Paragraph({children:[new TextRun({text:`Style: ${m.ctaStyle}`,font:"DM Sans",size:18,color:"64748B"})]}));
 
-  // Brief Notes
-  children.push(new Paragraph({ spacing: { before: 300 }, children: [] }));
-  children.push(new Paragraph({
-    heading: HeadingLevel.HEADING_2,
-    children: [new TextRun({ text: "Brief Notes", bold: true, font: "DM Sans", size: 28, color: "1E40AF" })],
-    spacing: { after: 100 },
-  }));
-  const schema = val("contentType")==="Listicle"?"ItemList+FAQPage":val("contentType")==="How-to Guide"?"HowTo+FAQPage":"Article+FAQPage";
-  children.push(new Paragraph({ children: [new TextRun({ text: `Schema Markup: ${schema}`, font: "DM Sans", size: 20, color: "334155" })], spacing: { after: 40 } }));
-  children.push(new Paragraph({ children: [new TextRun({ text: "Image: Min 3 original images with alt text containing keyword", font: "DM Sans", size: 20, color: "334155" })], spacing: { after: 40 } }));
-  children.push(new Paragraph({ children: [new TextRun({ text: "Tone: Friendly, educational, conversational Bahasa Indonesia", font: "DM Sans", size: 20, color: "334155" })], spacing: { after: 40 } }));
-  if (val("notes")) {
-    children.push(new Paragraph({ children: [new TextRun({ text: `Additional Notes: ${val("notes")}`, font: "DM Sans", size: 20, color: "334155" })], spacing: { after: 40 } }));
+  // Brief Notes — only if notes field is filled
+  if(val("notes")){
+    children.push(new Paragraph({spacing:{before:250},children:[]}));
+    children.push(new Paragraph({heading:HeadingLevel.HEADING_2,children:[new TextRun({text:"Brief Notes",bold:true,font:"DM Sans",size:28,color:"0F172A"})],spacing:{after:80}}));
+    children.push(new Paragraph({children:[new TextRun({text:val("notes"),font:"DM Sans",size:20,color:"334155"})],spacing:{after:40}}));
   }
 
-  // Create document
-  const doc = new Document({
-    styles: {
-      default: { document: { run: { font: "DM Sans", size: 22 } } },
-      paragraphStyles: [
-        { id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true,
-          run: { size: 36, bold: true, font: "DM Sans", color: "2563EB" },
-          paragraph: { spacing: { before: 240, after: 120 }, outlineLevel: 0 } },
-        { id: "Heading2", name: "Heading 2", basedOn: "Normal", next: "Normal", quickFormat: true,
-          run: { size: 28, bold: true, font: "DM Sans", color: "1E40AF" },
-          paragraph: { spacing: { before: 180, after: 80 }, outlineLevel: 1 } },
-        { id: "Heading3", name: "Heading 3", basedOn: "Normal", next: "Normal", quickFormat: true,
-          run: { size: 24, bold: true, font: "DM Sans", color: "3B82F6" },
-          paragraph: { spacing: { before: 120, after: 60 }, outlineLevel: 2 } },
+  const doc=new Document({
+    styles:{
+      default:{document:{run:{font:"DM Sans",size:22}}},
+      paragraphStyles:[
+        {id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:36,bold:true,font:"DM Sans",color:"0F172A"},paragraph:{spacing:{before:240,after:120},outlineLevel:0}},
+        {id:"Heading2",name:"Heading 2",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:28,bold:true,font:"DM Sans",color:"0F172A"},paragraph:{spacing:{before:180,after:80},outlineLevel:1}},
+        {id:"Heading3",name:"Heading 3",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:24,bold:true,font:"DM Sans",color:"0F172A"},paragraph:{spacing:{before:120,after:60},outlineLevel:2}},
+        {id:"Heading4",name:"Heading 4",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:22,bold:true,font:"DM Sans",color:"334155"},paragraph:{spacing:{before:100,after:50},outlineLevel:3}},
       ],
     },
-    sections: [{
-      properties: {
-        page: {
-          size: { width: 11906, height: 16838 },
-          margin: { top: 1134, right: 1134, bottom: 1134, left: 1134 },
-        },
-      },
-      children,
-    }],
+    sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1134,right:1134,bottom:1134,left:1134}}},children}],
   });
 
-  // Generate and upload to Google Drive
-  try {
-    const blob = await Packer.toBlob(doc);
-    const fileName = `Brief - ${val("keyword")} [${brand}].docx`;
+  try{
+    const blob=await Packer.toBlob(doc);
+    const fileName=`Brief - ${val("keyword")} [${brand}].docx`;
     showToast("Uploading ke Google Drive...");
-    await uploadToGDrive(blob, fileName);
-  } catch(e) {
+    await uploadToGDrive(blob,fileName);
+  }catch(e){
     console.error(e);
-    showToast("Error: " + (e.message || "gagal generate .docx"));
+    showToast("Error: "+(e.message||"gagal generate .docx"));
   }
 }
 
-// ── GOOGLE DRIVE OAUTH + UPLOAD ──
-const GAPI_CLIENT_ID = "183949651789-noji60agsn5unkgps4tikphmph6t1eta.apps.googleusercontent.com";
-const DRIVE_UPLOAD_URL = "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id,webViewLink";
-let gAccessToken = null;
+// ── GOOGLE DRIVE OAUTH ──
+const GAPI_CLIENT_ID="183949651789-noji60agsn5unkgps4tikphmph6t1eta.apps.googleusercontent.com";
+const DRIVE_UPLOAD_URL="https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id,webViewLink";
+let gAccessToken=null;
 
-function getAccessToken() {
-  return new Promise((resolve, reject) => {
-    if (gAccessToken) { resolve(gAccessToken); return; }
-    const client = google.accounts.oauth2.initTokenClient({
-      client_id: GAPI_CLIENT_ID,
-      scope: "https://www.googleapis.com/auth/drive.file",
-      callback: (resp) => {
-        if (resp.error) { reject(new Error(resp.error)); return; }
-        gAccessToken = resp.access_token;
-        // Token expires in ~1hr, clear it after 50min
-        setTimeout(() => { gAccessToken = null; }, 50 * 60 * 1000);
+function getAccessToken(){
+  return new Promise((resolve,reject)=>{
+    if(gAccessToken){resolve(gAccessToken);return}
+    const client=google.accounts.oauth2.initTokenClient({
+      client_id:GAPI_CLIENT_ID,
+      scope:"https://www.googleapis.com/auth/drive.file",
+      callback:(resp)=>{
+        if(resp.error){reject(new Error(resp.error));return}
+        gAccessToken=resp.access_token;
+        setTimeout(()=>{gAccessToken=null},50*60*1000);
         resolve(gAccessToken);
       },
     });
@@ -732,39 +376,22 @@ function getAccessToken() {
   });
 }
 
-async function uploadToGDrive(blob, fileName) {
-  const token = await getAccessToken();
-
-  const metadata = {
-    name: fileName,
-    mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  };
-
-  const form = new FormData();
-  form.append("metadata", new Blob([JSON.stringify(metadata)], { type: "application/json" }));
-  form.append("file", blob);
-
-  const res = await fetch(DRIVE_UPLOAD_URL, {
-    method: "POST",
-    headers: { Authorization: `Bearer ${token}` },
-    body: form,
-  });
-
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Upload failed: ${res.status} ${err}`);
-  }
-
-  const data = await res.json();
-  const docUrl = `https://docs.google.com/document/d/${data.id}/edit`;
-
+async function uploadToGDrive(blob,fileName){
+  const token=await getAccessToken();
+  const metadata={name:fileName,mimeType:"application/vnd.openxmlformats-officedocument.wordprocessingml.document"};
+  const form=new FormData();
+  form.append("metadata",new Blob([JSON.stringify(metadata)],{type:"application/json"}));
+  form.append("file",blob);
+  const res=await fetch(DRIVE_UPLOAD_URL,{method:"POST",headers:{Authorization:`Bearer ${token}`},body:form});
+  if(!res.ok){const err=await res.text();throw new Error(`Upload failed: ${res.status} ${err}`)}
+  const data=await res.json();
+  const docUrl=`https://docs.google.com/document/d/${data.id}/edit`;
   showToast("Google Doc created! Opening...");
-  window.open(docUrl, "_blank");
+  window.open(docUrl,"_blank");
 }
 
 // ── INIT ──
-renderPills();
-renderFunnelCard();
+renderPills();renderFunnelCard();
 </script>
 </body>
 </html>
