@@ -411,7 +411,59 @@ async function uploadToGDrive(blob,fileName){
 }
 
 // ── INIT ──
-renderPills();renderFunnelCard();
+// ── INIT & URL PARAMETER CATCHER ──
+renderPills();
+renderFunnelCard();
+
+window.onload = () => {
+  const params = new URLSearchParams(window.location.search);
+  
+  // Tangkap Data Dasar
+  if(params.has('kw')) $('keyword').value = params.get('kw');
+  if(params.has('funnel')) {
+    const f = params.get('funnel').toUpperCase();
+    if(FM[f]) setFunnel(f);
+  }
+  if(params.has('type')) {
+    const t = params.get('type');
+    const sel = $('contentType');
+    for(let i=0; i<sel.options.length; i++) {
+      if(sel.options[i].value.toLowerCase() === t.toLowerCase()) {
+        sel.selectedIndex = i; break;
+      }
+    }
+  }
+
+  // Tangkap Data Hierarki dari Cluster Library
+  if(params.has('cluster')) $('cluster').value = params.get('cluster');
+  if(params.has('anchor')) $('anchorText').value = params.get('anchor');
+
+  // Langsung otomatis buat outline jika ada keyword
+  if(params.has('kw')) autoGenOutline();
+};
+
+// ── UPDATE MINOR: Teks Brief Elegan Saat Brand/Domain Kosong ──
+function makeBriefText(){
+  // Jika kosong, gunakan placeholder general, bukan undefined/string kosong
+  const brand = val("brand") || "[Nama Klien/Brand]";
+  const domain = val("domain") || "[domain-website.com]";
+  const m=FM[currentFunnel];
+  const cta=val("cta")+(val("cta")==="Other (custom)"&&val("customCta")?` — ${val("customCta")}`:"");
+  
+  let s=`SEO ARTICLE BRIEF\n${brand} — ${domain}\n${"═".repeat(44)}\n\n`;
+  s+=`PRIMARY KEYWORD: ${val("keyword")}\nSECONDARY KEYWORDS: ${val("secondaryKeywords")||"—"}\nTOPIC CLUSTER: ${val("cluster")||"—"}\n`;
+  s+=`FUNNEL: ${currentFunnel} (${m.label} — ${m.stage})\nSEARCH INTENT: ${m.searchIntent}\nCONTENT TYPE: ${val("contentType")}\n`;
+  s+=`PERSONA: ${val("persona")||"—"}\nWORD COUNT: ${m.wordRange}\nCTA: ${cta}\nCTA STYLE: ${m.ctaStyle}\n`;
+  s+=`INTERNAL LINK: ${val("internalLink")||"—"}\nANCHOR TEXT: ${val("anchorText")||"—"}\n`;
+  
+  if(val("internalLink"))s+=`LINK URL: https://${domain}/${val("internalLink").replace(/^\//, '')}/\n`;
+  
+  s+=`\n${"═".repeat(44)}\nCONTENT OUTLINE\n\n`;
+  outline.forEach(i=>{const ind=i.tag==="H3"?"    ":i.tag==="H4"?"        ":"";s+=`${ind}${i.tag} — ${i.text}\n`;if(i.notes)s+=`${ind}  → ${i.notes}\n`});
+  if(val("notes")){s+=`\n${"═".repeat(44)}\nBRIEF NOTES\n\n${val("notes")}\n`}
+  
+  return s;
+}
 </script>
 </body>
 </html>
